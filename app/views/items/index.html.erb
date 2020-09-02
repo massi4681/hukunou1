@@ -5,3 +5,4 @@
 <div><%= item.salary %></div>
 <div><%= link_to "詳細", item_path(item.id) %></div>
 <% end %>
+<%= paginate @items %>

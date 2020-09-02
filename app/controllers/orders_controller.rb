@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def index
+    @orders = current_user
   end
 
    private
@@ -17,3 +18,4 @@ class OrdersController < ApplicationController
   end
 
 end
+

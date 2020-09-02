@@ -30,17 +30,18 @@
 <h3>お仕事の日程・履歴  <%= link_to '詳細', orders_path %></h3>
 
 <table>
+	<thead>
+		<tr>
+			<th>投稿日</th>
+			<th>お仕事名</th>
+			<th></th>
+		</tr>
+	</thead>
 	<tbody>
 		<% @items.each do |item| %>
 		<tr>
-			<td>投稿日</td>
 			<td><%= item.created_at.strftime('%Y/%m/%d') %></td>
-		</tr>
-		<tr>
-			<td>お仕事名</td>
 			<td><%= item.item_name %></td>
-		</tr>
-		<tr>
 			<td><%= link_to "編集", edit_item_path(item.id) %></td>
 			<td><%= link_to "削除", item_path(item.id), method: :delete %></td>
 		</tr>
