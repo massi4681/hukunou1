@@ -1,0 +1,12 @@
+<%= attachment_image_tag @item, :image, :fill, 500,300 %>
+<h3><%= @item.item_name %></h3>
+<p>作業内容 : <%= @item.introduction %></p>
+<p>作業期間 : <%= @item.work_period %></p>
+<p>作業時間 : <%= @item.work_time %></p>
+<p>作業場所 : <%= @item.place %></p>
+<p>募集人数 : <%= @item.people %>人</p>
+<p>給与情報 :時給¥<%= @item.salary %>円</p>
+<p>支払い方法 : <%= @item.payment %></p>
+<p><%= link_to "仕事する", orders_thanks_path %></p>
+<p>＊こちらをクリックすると契約成立となります。</p>
+<p>＊たくさんの施設に利用いただけるよう、お仕事契約は一件ごとです。</p>

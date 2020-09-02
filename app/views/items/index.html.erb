@@ -1,0 +1,7 @@
+<h1>お仕事一覧</h1>
+<% @items.each do |item| %>
+<%= attachment_image_tag item, :image, :fill, 100, 100 %>
+<div><%= item.item_name %></div>
+<div><%= item.salary %></div>
+<div><%= link_to "詳細", item_path(item.id) %></div>
+<% end %>
