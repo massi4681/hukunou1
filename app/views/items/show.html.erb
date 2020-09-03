@@ -7,9 +7,14 @@
 <p>募集人数 : <%= @item.people %>人</p>
 <p>給与情報 :時給¥<%= @item.salary %>円</p>
 <p>支払い方法 : <%= @item.payment %></p>
-<p><%= link_to "仕事する", orders_thanks_path %></p>
+
+<%= form_with url: orders_path, local: true do |form|  %>
+<%= form.hidden_field :item_id, :value => @item.id %>
+<%= form.submit "仕事する" %>
+<% end %>
 <p>＊こちらをクリックすると契約成立となります。</p>
 <p>＊たくさんの施設に利用いただけるよう、お仕事契約は一件ごとです。</p>
+
 <% if @item.favorited_by?(current_user) %>
 
 <ul style="list-style: none;">

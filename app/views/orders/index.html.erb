@@ -11,9 +11,9 @@
 	<tbody>
 		<% @orders.each do |order| %>
 		<tr>
-			<td><%= @item.work_period %></td>
-			<td><%= @item.item_name %></td>
-			<td><%= @item.place %></td>
+			<td><%= order.item.work_period %></td>
+			<td><%= order.item.item_name %></td>
+			<td><%= order.item.place %></td>
 		</tr>
 		<% end %>
 	</tbody>
