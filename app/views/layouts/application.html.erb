@@ -11,7 +11,13 @@
   </head>
 
   <body>
+      <header class="navbar navbar-fixed-top navbar-default" style="background-color:#EEEEEE;">
+    <div class="container">
+      <nav class="nav navbar-nav navbar-left">
     <span>HukuNou</span>
+  </nav>
+  <nav>
+  <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
     <li>
       <%= link_to "マイページ", users_mypage_path %>
@@ -33,7 +39,12 @@
       <%= link_to "ログイン", new_user_session_path %>
     </li>
     <% end %>
-
+  </ul>
+</nav>
+</div>
+</header>
+  <div class="body">
     <%= yield %>
+  </div>
   </body>
 </html>

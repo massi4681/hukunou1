@@ -1,27 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
 <h1>マイページ</h1>
 
 <h3>登録情報<%= link_to '編集する', users_edit_path %></h3>
 
-<table>
+<table class="table table-bordered">
 	<tbody>
 		<tr>
-			<td>会社名</td>
+			<td class="active">会社名</td>
 			<td><%= @user.name %></td>
 		</tr>
 		<tr>
-			<td>郵便番号(ハイフンなし)</td>
+			<td class="active">郵便番号(ハイフンなし)</td>
 			<td><%= @user.postal_code %></td>
 		</tr>
 		<tr>
-			<td>住所</td>
+			<td class="active">住所</td>
 			<td><%= @user.adress %></td>
 		</tr>
 		<tr>
-			<td>電話番号(ハイフンなし)</td>
+			<td class="active">電話番号(ハイフンなし)</td>
 			<td><%= @user.telephone_number %></td>
 		</tr>
 		<tr>
-			<td>メールアドレス</td>
+			<td class="active">メールアドレス</td>
 			<td><%= @user.email %></td>
 		</tr>
 	</tbody>
@@ -29,9 +32,9 @@
 
 <h3>お仕事の日程・履歴  <%= link_to '詳細', orders_path %></h3>
 
-<table>
+<table class="table table-bordered">
 	<thead>
-		<tr>
+		<tr class="active">
 			<th>投稿日</th>
 			<th>お仕事名</th>
 			<th></th>
@@ -42,10 +45,13 @@
 		<tr>
 			<td><%= item.created_at.strftime('%Y/%m/%d') %></td>
 			<td><%= item.item_name %></td>
-			<td><%= link_to "編集", edit_item_path(item.id) %></td>
-			<td><%= link_to "削除", item_path(item.id), method: :delete %></td>
+			<td><%= link_to "編集", edit_item_path(item.id), class:"btn btn-info primary" %>  <%= link_to "削除", item_path(item.id), method: :delete, class:"btn btn-danger" %></td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+
 
