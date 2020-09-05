@@ -1,8 +1,16 @@
+<div class="container">
 <h1>お仕事一覧</h1>
+<div class="row">
 <% @items.each do |item| %>
+<div class="col-xs-3">
 <%= attachment_image_tag item, :image, :fill, 100, 100 %>
 <div><%= item.item_name %></div>
 <div><%= item.salary %></div>
 <div><%= link_to "詳細", item_path(item.id) %></div>
+</div>
 <% end %>
+</div>
+</div>
+<div class="col-xs-10 col-xs-offset-6">
 <%= paginate @items %>
+</div>
