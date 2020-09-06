@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-  	@items = Item.all
+  	@items = Item.order(updated_at: :desc).limit(4)
   end
 
 
