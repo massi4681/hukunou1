@@ -1,48 +1,49 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-<h1>お仕事新規投稿(生産者)</h1>
+			<h1>お仕事新規投稿(生産者)</h1>
 
-<%= form_for(@item,url:'/items') do |f| %>
+			<%= form_for(@item,url:'/items') do |f| %>
 
-<div class="col-xs-12 col-xs-offset-4">
-<div class="new-image"><%= f.attachment_field :image %></div>
-</div>
+			<div class="col-xs-12 col-xs-offset-4">
+				<div class="new-image"><%= f.attachment_field :image %></div>
+			</div>
 
-<h4>お仕事名</h4>
-<div class="new-item-name"><%= f.text_field :item_name %></div>
+			<h4>お仕事名</h4>
+			<div class="new-item-name"><%= f.text_field :item_name %></div>
 
-<h4>作業内容</h4>
-<div class="new-introduction"><%= f.text_area :introduction %></div>
+			<h4>作業内容</h4>
+			<div class="new-introduction"><%= f.text_area :introduction %></div>
 
-<h4>作業期間</h4>
-<div class="new-work-period"><%= f.text_field :work_period %></span>
+			<h4>作業期間</h4>
+			<div class="new-work-period"><%= f.text_field :work_period %></span>
 
-<h4>時間</h4>
-<div class="new-work-time"><%= f.text_field :work_time %></div>
+				<h4>時間</h4>
+				<div class="new-work-time"><%= f.text_field :work_time %></div>
 
-<h4>作業場所</h4>
-<div class="new-place"><%= f.text_field :place %></div><br>
-
-
-<%= f.label :people, "募集人数を選択"%><br>
-<div class="new-people"><%= f.select :people, [1,2,3,4,5,6,7,8,9,10] %></div><br>
+				<h4>作業場所</h4>
+				<div class="new-place"><%= f.text_field :place %></div><br>
 
 
-<%= f.label :salary, "時給を選択"%><br>
-<div class="new-salary"><%= f.select :salary, [950,960,970,980,990,1000] %></div><br>
+				<%= f.label :people, "募集人数を選択"%><br>
+				<div class="new-people"><%= f.select :people, [1,2,3,4,5,6,7,8,9,10] %></div><br>
 
 
-<%= f.label :payment, "支払い方法を選択"%><br>
-<div class="payment"><%= f.select :payment, ['銀行振込'] %></div>
+				<%= f.label :salary, "時給を選択"%><br>
+				<div class="new-salary"><%= f.select :salary, [950,960,970,980,990,1000] %></div><br>
 
-<div class="new-item">
-<%= f.submit '新規投稿', class:"btn btn-info primary" %>
-</div>
 
-<% end %>
-</div>
-</div>
-</div>
+				<%= f.label :payment, "支払い方法を選択"%><br>
+				<div class="payment"><%= f.select :payment, ['銀行振込'] %></div>
+
+				<div class="new-item">
+					<%= f.submit '新規投稿', class:"btn btn-info primary" %>
+				</div>
+
+				<% end %>
+			</div>
+		</div>
+	</div>
+
 
 

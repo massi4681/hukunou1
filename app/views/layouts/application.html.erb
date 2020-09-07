@@ -1,89 +1,93 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
+<!DOCTYPE html>
+<html>
+<head>
 
-    <title>HukuNou</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>HukuNou</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
 
-  <body>
-    <header class="navbar navbar-fixed-top navbar-default" style="background-color:#EEEEEE;">
-      <div class="container">
-        <nav class="nav navbar-nav navbar-left">
-          <span>HukuNou</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <li>
-              <%= link_to "マイページ", users_mypage_path %>
-            </li>
-            <li>
-              <%= link_to 'お仕事一覧', items_path %>
-            </li>
-            <li>
-              <%= link_to "新規投稿(生産者)", new_item_path %>
-            </li>
-            <li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </li>
-            <% else %>
-            <li>
-              <%= link_to 'Top', root_path %>
-            </li>
-            <li>
-              <%= link_to '新規登録', new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "ログイン", new_user_session_path %>
-            </li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="body">
-      <%= yield %>
+<body>
+  <header class="navbar navbar-fixed-top navbar-default" style="background-color:#EEEEEE;">
+    <div class="container">
+      <nav class="nav navbar-nav navbar-left">
+        <span>HukuNou</span>
+      </nav>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to "マイページ", users_mypage_path %>
+          </li>
+          <li>
+            <%= link_to 'お仕事一覧', items_path %>
+          </li>
+          <li>
+            <%= link_to "新規投稿(生産者)", new_item_path %>
+          </li>
+          <li>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to 'Top', root_path %>
+          </li>
+          <li>
+            <%= link_to '新規登録', new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+          <% end %>
+        </ul>
+      </nav>
     </div>
-    <footer>
-      <div class="sns">
-        <!--以下twitter-->
-        <a href="https://twitter.com/" class="btn-social-isometric">
-          <span class="btn-social-isometric-icon btn-social-isometric-icon--twitter">
-            <i class="fab fa-twitter"></i>
-          </span>
-          <span class="btn-social-isometric-text">TWEET</span>
-        </a>
+  </header>
+  <div class="body">
+    <%= yield %>
+  </div>
+  <footer>
+    <div class="sns">
+      <!--以下twitter-->
+      <a href="https://twitter.com/" class="btn-social-isometric">
+        <span class="btn-social-isometric-icon btn-social-isometric-icon--twitter">
+          <i class="fab fa-twitter"></i>
+        </span>
+        <span class="btn-social-isometric-text">TWEET</span>
+      </a>
 
-        <!--以下facebook-->
-        <a href="https://ja-jp.facebook.com/" class="btn-social-isometric">
-          <span class="btn-social-isometric-icon btn-social-isometric-icon--facebook">
-            <i class="fab fa-facebook-f"></i>
-          </span>
-          <span class="btn-social-isometric-text">SHARE</span>
-        </a>
+      <!--以下facebook-->
+      <a href="https://ja-jp.facebook.com/" class="btn-social-isometric">
+        <span class="btn-social-isometric-icon btn-social-isometric-icon--facebook">
+          <i class="fab fa-facebook-f"></i>
+        </span>
+        <span class="btn-social-isometric-text">SHARE</span>
+      </a>
 
-        <!--以下pocket-->
-        <a href="https://getpocket.com/" class="btn-social-isometric">
-          <span class="btn-social-isometric-icon btn-social-isometric-icon--pocket">
-            <i class="fab fa-get-pocket"></i>
-          </span>
-          <span class="btn-social-isometric-text">POCKET</span>
-        </a>
+      <!--以下pocket-->
+      <a href="https://getpocket.com/" class="btn-social-isometric">
+        <span class="btn-social-isometric-icon btn-social-isometric-icon--pocket">
+          <i class="fab fa-get-pocket"></i>
+        </span>
+        <span class="btn-social-isometric-text">POCKET</span>
+      </a>
 
-        <!--以下feedly-->
-        <a href="https://feedly.com/i/welcome" class="btn-social-isometric">
-          <span class="btn-social-isometric-icon btn-social-isometric-icon--feedly">
-            <i class="fas fa-rss"></i>
-          </span>
-          <span class="btn-social-isometric-text">FEEDLY</span>
-        </a>
-      </div>
-    </footer>
-  </body>
-  </html>
+      <!--以下feedly-->
+      <a href="https://feedly.com/i/welcome" class="btn-social-isometric">
+        <span class="btn-social-isometric-icon btn-social-isometric-icon--feedly">
+          <i class="fas fa-rss"></i>
+        </span>
+        <span class="btn-social-isometric-text">FEEDLY</span>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

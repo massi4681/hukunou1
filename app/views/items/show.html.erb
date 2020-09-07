@@ -1,49 +1,49 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xs-6">
-<%= attachment_image_tag @item, :image, :fill, 500,300 %>
-</div>
+  <div class="row">
+    <div class="col-xs-6">
+      <%= attachment_image_tag @item, :image, :fill, 500,300 %>
+    </div>
 
-<div class="col-xs-6">
-<h3><%= @item.item_name %></h3>
-<p>作業内容 : <%= @item.introduction %></p>
-<p>作業期間 : <%= @item.work_period %></p>
-<p>作業時間 : <%= @item.work_time %></p>
-<p>作業場所 : <%= @item.place %></p>
-<p>募集人数 : <%= @item.people %>人</p>
-<p>給与情報 :時給¥<%= @item.salary %>円</p>
-<p>支払い方法 : <%= @item.payment %></p>
+    <div class="col-xs-6">
+      <h3><%= @item.item_name %></h3>
+      <p>作業内容 : <%= @item.introduction %></p>
+      <p>作業期間 : <%= @item.work_period %></p>
+      <p>作業時間 : <%= @item.work_time %></p>
+      <p>作業場所 : <%= @item.place %></p>
+      <p>募集人数 : <%= @item.people %>人</p>
+      <p>給与情報 :時給¥<%= @item.salary %>円</p>
+      <p>支払い方法 : <%= @item.payment %></p>
 
-<%= form_with url: orders_path, local: true do |form|  %>
-<%= form.hidden_field :item_id, :value => @item.id %>
-<%= form.submit "仕事する", class:"btn btn-primary" %>
-<% end %>
-<div class="attention">
-<p>＊こちらをクリックすると契約成立となります。</p>
-<p>＊たくさんの施設に利用いただけるよう、お仕事契約は一件ごとです。</p>
-</div>
-<% if @item.favorited_by?(current_user) %>
+      <%= form_with url: orders_path, local: true do |form|  %>
+      <%= form.hidden_field :item_id, :value => @item.id %>
+      <%= form.submit "仕事する", class:"btn btn-primary" %>
+      <% end %>
+      <div class="attention">
+        <p>＊こちらをクリックすると契約成立となります。</p>
+        <p>＊たくさんの施設に利用いただけるよう、お仕事契約は一件ごとです。</p>
+      </div>
+      <% if @item.favorited_by?(current_user) %>
 
-<ul style="list-style: none;">
-<li>
-  <%= link_to item_favorites_path(@item), method: :delete do %>
-    <i class="far fa-heart like-btn" ></i>
-    <%= @item.favorites.count %> いいね
-  <% end %>
-</li>
-</ul>
-<% else %>
-<ul style="list-style: none;">
-<li>
-  <%= link_to item_favorites_path(@item), method: :post do %>
-    <i class="fas fa-heart unlike-btn"></i>
-    <%= @item.favorites.count %> いいね
-  <% end %>
-</li>
-</ul>
-<% end %>
-</div>
-</div>
+      <ul style="list-style: none;">
+        <li>
+          <%= link_to item_favorites_path(@item), method: :delete do %>
+          <i class="far fa-heart like-btn" ></i>
+          <%= @item.favorites.count %> いいね
+          <% end %>
+        </li>
+      </ul>
+      <% else %>
+      <ul style="list-style: none;">
+        <li>
+          <%= link_to item_favorites_path(@item), method: :post do %>
+          <i class="fas fa-heart unlike-btn"></i>
+          <%= @item.favorites.count %> いいね
+          <% end %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
