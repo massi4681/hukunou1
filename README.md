@@ -1,24 +1,26 @@
-# README
+# <アプリ名>
+# hukunou1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+生産性を高めたい障がい者支援事業所と、収穫期など繁忙期の人手不足に苦しむ農家をマッチングする
 
-Things you may want to cover:
+### サイトテーマ
+障がい者支援事業所と農家を繋ぐ
 
-* Ruby version
+### テーマを選んだ理由
+障がい者の工賃向上と農家の人手不足を解決する為
 
-* System dependencies
 
-* Configuration
+### ターゲットユーザ
+千葉県内の障がい者支援事業所と農家
 
-* Database creation
+### 主な利用シーン
+農家の繁忙時期
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 設計書
+テーブル
+https://docs.google.com/spreadsheets/d/1npYsZy0fCrioyZnjZaKoOKoSt3hfHokqRoNfCGQpAdA/edit?usp=sharing
+ルーティング
+https://drive.google.com/file/d/1TOUlLC1r-71o14WfNoZ_1NtYSSxnAabd/view?usp=sharing
+チャレンジ要素一覧ファイル
+https://docs.google.com/spreadsheets/d/19ZRzOuPDlAb_Otg_08fHdKcRsQ-0pxis_JllSBxGYSg/edit?usp=sharing
