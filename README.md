@@ -1,6 +1,6 @@
 ![top](app/assets/images/top.jpg)
 # <アプリ名>
-# hukunou1
+# HukuNou
 
 ## サイト概要
 生産性を高めたい障がい者支援事業所と、収穫期など繁忙期の人手不足に苦しむ農家をマッチングする
